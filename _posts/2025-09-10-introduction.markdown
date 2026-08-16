@@ -1,0 +1,47 @@
+---
+layout: post
+title:  "HideText Use Cases"
+date:   2026-07-20 23:50:00 +0800
+categories: jekyll update
+---
+
+### Introduction of HideText
+
+This tool use random numbers to hide your text from search engines finding your internet activity. It has been deployed online: 
+
+- [https://hide-text.com/](https://hide-text.com/) (Official Domain)
+- [https://hide-text.vercel.app/](https://hide-text.vercel.app/) (Original deployment URL, fully compatible)
+
+Both domains point to the same project. Any existing links created using the Vercel domain remain fully functional.
+
+
+## Use Case
+
+Suppose your email address is "my_special_name@example.com".
+
+You can use hide-text.com to generate multiple random addresses:
+- [https://hide-text.com/?c=F0ouRxQuBlwbXy5aBSYAdR9LEFkUJwAbGVwc&k=z3q4dKe5](https://hide-text.com/?c=F0ouRxQuBlwbXy5aBSYAdR9LEFkUJwAbGVwc&k=z3q4dKe5) (Random Address A)
+- [https://hide-text.com/?c=GAMzNCMLCgYUFjMpMgMMLxACDSojAgxBFhUB&k=uzlGSnio](https://hide-text.com/?c=GAMzNCMLCgYUFjMpMgMMLxACDSojAgxBFhUB&k=uzlGSnio) (Random Address B)
+
+Clicking on any of these distinct random addresses reveals your actual address: "my_special_name@example.com".
+
+You can post "Random Address A" on Sub-A and "Random Address B" on Sub-B.
+
+### Scenario 1: The random address cannot be retrieved from your real email address
+
+If someone searches for your real email address—"my_special_name@example.com"—on Google, they will not see the "Random Address A" you posted on Sub-A.
+
+This is because your real email address was not made public on Sub-A, and Google does not link "Random Address A" to your real email address.
+
+### Scenario 2: A leak of one random address does not expose the other
+
+If someone learns of "Random Address A" and searches for it on Google, they will only see the record you left on Sub-A. They will not be able to discover "Random Address B," which you posted on Sub-B.
+
+This is because it is impossible to derive "Random Address B" from "Random Address A."
+
+## Privacy
+
+HideText is designed with a privacy-first approach. All text processing is performed entirely within your web browser. 
+
+For more details, please see our full [Privacy Policy]({% post_url 2025-09-10-privacy %}).
+

@@ -1,0 +1,40 @@
+---
+layout: post
+title:  "How HideText Works: XOR + Base64"
+date:   2026-07-20 23:45:00 +0800
+categories: security engineering
+---
+
+## Technical Implementation
+
+How HideText Works: XOR + Base64
+
+HideText uses two simple steps to turn readable text into URL-safe, random-looking links.
+
+### XOR — reversible transformation
+
+XOR (exclusive OR) has a useful property: (A XOR B) XOR B = A.
+
+Example:
+
+- Plaintext: HELLO
+- Key: 12345
+- HELLO XOR 12345 → u8#kP // get ciphertext
+- u8#kP XOR 12345 → HELLO // restore plaintext
+
+XOR makes text look random but can be recovered with the same key.
+
+### Base64 — make data URL-friendly
+
+The XOR result is arbitrary bytes and may include characters that break URLs (for example `a+b/c=d`).
+Base64 (or URL-safe Base64) converts those bytes into URL-safe characters.
+
+Example:
+
+- Raw: a+b/c=d //will break URL
+- URL-safe Base64: YS1iL2MrZA //URL-safe
+- Link: https://hide-text.com/?c=YS1iL2MrZA
+
+### Summary
+
+XOR obscures content; Base64 makes the result safe for URLs. Together they produce many different links that reveal the same original text when the correct key is provided.
